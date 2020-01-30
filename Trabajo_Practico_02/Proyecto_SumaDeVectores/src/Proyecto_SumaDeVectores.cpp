@@ -1,7 +1,7 @@
 /*
  ============================================================================
  Name        : Proyecto_SumaDeVectores.c
- Author      : JoseAlberto
+ Author      : Daniel Contreras
  Version     :
  Copyright   : Your copyright notice
  Description : Compute Pi in MPI C++
