@@ -46,7 +46,7 @@ int main (int argc, char *argv[]) {
 	 totalDet+=cof;
 
  }
- printf("%lf ",totalDet);
+ printf("Determinante de la matriz: %lf ",totalDet);
  return 0;
 }
 
@@ -112,30 +112,21 @@ double cofactor(double mat[N][N], int b,int j){
 	double menor[b][b];
 	int c;
 	for(int i=0;i<b;i++){
-			for(int j=0;j<b;j++){
-				menor[i][j]=0;
+		for(int j=0;j<b;j++){
+			menor[i][j]=0;
+		}
+	}
+	for(int k=1; k<b; k++){
+		c = 0;
+		for(int l=0; l<b; l++){
+			if(l!=j){
+				menor[k-1][c] = mat[k][l];
+				c++;
 			}
 		}
-
-	for(int k=1; k<b; k++){
-
-			c = 0;
-
-			for(int l=0; l<b; l++){
-
-					if(l!=j){
-
-							menor[k-1][c] = mat[k][l];
-
-							c++;
-
-					}
-
-			}
-
 	}
 	double determinant = mat[0][j]*determinantOfMatrix(menor,b-1);
-	printf("determinant: %lf \n",determinant);
+	printf("Cofactor %d: %lf \n",j,determinant);
 	if(j%2!=0)
 		determinant*=-1;
 	return determinant;
